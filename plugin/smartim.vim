@@ -24,7 +24,12 @@ if !exists("g:smartim_debug")
   let g:smartim_debug = 0
 endif
 
-let s:imselect_path = expand('<sfile>:p:h') . "/im-select"
+"  allow configuring im-select path via g:smartim_imselect_path
+if !exists("g:smartim_imselect_path")
+  let g:smartim_imselect_path = expand('<sfile>:p:h') . "/im-select"
+endif
+
+let s:imselect_path = g:smartim_imselect_path
 let s:smartim_debug_output = $HOME . "/vim_smartim_debug_output"
 
 function! Smartim_debug_print(msg)
@@ -101,6 +106,7 @@ endfunction
 
 augroup smartim
   autocmd!
+  autocmd VimEnter    * call Smartim_SelectDefault()
   autocmd VimLeavePre * call Smartim_SelectDefault()
   autocmd InsertLeave * call Smartim_SelectDefault()
   autocmd InsertEnter * call Smartim_SelectSaved()
