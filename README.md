@@ -13,12 +13,12 @@ It is Mac-only for now.
 
 ## Vundle
 1. Add this line to your ~/.vimrc file:
-```Plugin 'ybian/smartim'```
+```Plugin 'chenqingze/smartim'```
 2. Open vim and run `:PluginInstall`
 
 ## Pathogen
 1. `cd ~/.vim/bundle`
-2. `git clone git@github.com:ybian/smartim.git`
+2. `git clone git@github.com:chenqingze/smartim.git`
 
 ## Others
 1. Clone this repository to your local disk
